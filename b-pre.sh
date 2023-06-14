@@ -19,10 +19,11 @@ echo "###############################################"
 echo "Done."
 echo "###############################################"
 echo "Installing proton clang 17"
-TC_DIR="$HOME/tc/proton/clang-17"
+TC_BRANCH="clang-17"
+TC_DIR="$HOME/tc/proton/$TC_BRANCH"
 if ! [ -d "$TC_DIR" ]; then
 		echo "Proton clang not found! Cloning to $TC_DIR..."
-		if ! git clone --single-branch --depth=1 -b clang-15 https://gitlab.com/LeCmnGend/proton-clang $TC_DIR; then
+		if ! git clone --single-branch --depth=1 -b=$TC_BRANCH https://gitlab.com/LeCmnGend/proton-clang $TC_DIR; then
 				echo "Cloning failed! Aborting..."
 				exit 1
 		fi
