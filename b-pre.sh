@@ -17,17 +17,6 @@ sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleap
 sudo chmod a+rx /usr/local/bin/repo
 echo "###############################################"
 echo "Done."
-echo "###############################################"
-echo "Installing proton clang 17"
-TC_BRANCH="clang-17"
-TC_DIR="$HOME/tc/proton/$TC_BRANCH"
-if ! [ -d "$TC_DIR" ]; then
-		echo "Proton clang not found! Cloning to $TC_DIR..."
-		if ! git clone --single-branch --depth=1 -b=$TC_BRANCH https://gitlab.com/LeCmnGend/proton-clang $TC_DIR; then
-				echo "Cloning failed! Aborting..."
-				exit 1
-		fi
-fi
 
 echo "###############################################"
 echo "Done."
