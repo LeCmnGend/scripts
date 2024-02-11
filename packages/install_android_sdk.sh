@@ -22,7 +22,7 @@ function setup_android_sdk() {
 		while read -r package; do
 			yes | "${SDK_DIR}"/cmdline-tools/bin/sdkmanager --sdk_root="${SDK_DIR}" "${package:?}"
 		done < "${CUR_DIR}"/packages/android-sdk-minimal.txt
-		rm /tmp/tools.zip
+		#rm /tmp/tools.zip
 	fi
 	
     cd - || exit
@@ -34,10 +34,5 @@ function setup_android_sdk() {
 }
 
 # Check if sdk already installed
-if [ ! -d "${SDK_DIR}" ]; then
+#if [ ! -d "${SDK_DIR}" ]; then
 	setup_android_sdk
-else
-	echo "###############################################"
-	echo "Already installed."
-	echo "###############################################"
-fi
